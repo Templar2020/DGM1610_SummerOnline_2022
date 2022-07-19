@@ -10,10 +10,10 @@ public class DetectCollision : MonoBehaviour
 
     void Start()
     {
-        scoreManager = GameObject.Find("ScoreText").GetComponent<ScoreManager>(); // Reference ScoreManager Script
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>(); // Find ScoreManager gameobject and reference ScoreManager script component
        
     }
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other) // Once the Trigger has been entered record collision in the argument variable "other"
     {
         scoreManager.IncreaseScore(scoreToGive); // Increase the Score
         Destroy(gameObject); // Destroy this gameobject
